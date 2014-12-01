@@ -1,5 +1,5 @@
 test:
   adapter: postgresql
   database: howmany_test
-  username: development
+  username: postgres
   host: localhost
