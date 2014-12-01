@@ -1,0 +1,5 @@
+test:
+  adapter: postgresql
+  database: howmany_test
+  username: development
+  host: localhost
