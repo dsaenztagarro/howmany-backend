@@ -1,4 +1,3 @@
-[![Gem Version](https://badge.fury.io/rb/howmany-backend.svg)](http://badge.fury.io/rb/howmany-backend)
 [![Build Status](https://travis-ci.org/dsaenztagarro/howmany-backend.png)](https://travis-ci.org/dsaenztagarro/howmany-backend)
 [![Code Climate](https://codeclimate.com/github/dsaenztagarro/howmany-backend/badges/gpa.svg)](https://codeclimate.com/github/dsaenztagarro/howmany-backend)
 [![Coverage Status](https://coveralls.io/repos/dsaenztagarro/howmany-backend/badge.png?branch=master)](https://coveralls.io/r/dsaenztagarro/howmany-backend?branch=master)
