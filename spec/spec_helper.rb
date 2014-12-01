@@ -31,7 +31,7 @@ module RSpecMixin
   include Rack::Test::Methods
   include FactoryGirl::Syntax::Methods
 
-  def app() Sinatra::Application end
+  def app() HowManyApp end
 
   def json_response
     JSON.parse(last_response.body)

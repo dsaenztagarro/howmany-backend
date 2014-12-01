@@ -1,6 +1,7 @@
-require 'sinatra'
+require 'sinatra/base'
 require 'sinatra/activerecord'
-require_relative 'config/environment'
+require 'sinatra/reloader'
+require 'pry'
 
 # Rabl config
 require 'rabl'
@@ -13,17 +14,18 @@ Rabl.register!
   Dir.glob("app/#{folder}/*.rb").each { |path| require_relative path }
 end
 
-set :views, Proc.new { File.join(root, 'app', 'views') }
+class HowManyApp < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
 
-get '/api/v1/event_types' do
-  @event_types = EventType.all
-  rabl :event_types, :format => "json"
+  set :views, Proc.new { File.join(root, 'app', 'views') }
+
+  get '/api/v1/event_types' do
+    @event_types = EventType.all
+    rabl :event_types, :format => "json"
+  end
+
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
-
-# get '/api/events' do
-#   Event.all
-# end
-#
-# get '/api/events/:id' do
-#   Event.find(params[:id].to_i)
-# end

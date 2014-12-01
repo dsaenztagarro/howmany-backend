@@ -1,3 +1,4 @@
-require_relative 'app'
+require File.dirname(__FILE__) + '/app'
 
-map('event_types').run { EventTypesController }
+run HowManyApp
+
