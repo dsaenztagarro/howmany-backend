@@ -72,7 +72,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rainbow (2.0.0)
-    rake (10.1.0)
+    rake (10.4.1)
     reek (1.4.0)
       rainbow (>= 1.99, < 3.0)
       ruby2ruby (>= 2.0.8, < 3.0)
@@ -139,23 +139,23 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord
+  activerecord (~> 4.1.8)
   cane
   codeclimate-test-reporter
   coveralls
   database_cleaner
   factory_girl
   json_spec
-  pg
+  pg (~> 0.17.1)
   pry
   pry-byebug
   rabl
-  rake
+  rake (~> 10.4.1)
   reek
   rspec
   rubocop
   rubocop-rspec
   simplecov
-  sinatra
+  sinatra (~> 1.4.5)
   sinatra-activerecord
   sinatra-contrib

@@ -8,7 +8,9 @@ before_script:
 - psql -c 'create database howmany_test;' -U postgres
 - cp config/database.yml.travis config/database.yml
 script:
-- RACK_ENV=test bundle exec rake db:migrate --trace
+- export TRAVIS=true
+- export RACK_ENV=test
+- bundle exec rake db:migrate --trace
 - bundle exec rake db:test:prepare
 - bundle exec rake
 addons:

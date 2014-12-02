@@ -26,6 +26,11 @@ class HowManyApp < Sinatra::Base
     rabl :event_types, :format => "json"
   end
 
+  get '/api/v1/event_types/:id' do
+    @event_type = EventType.find(params[:id].to_i)
+    rabl :event_type, :format => "json"
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
