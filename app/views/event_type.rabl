@@ -8,6 +8,6 @@ end
 
 node(:event_type_attributes) do
   @event_type.event_type_attributes.map do |attr|
-    { id: attr.id, name: attr.name, value_type: attr.value_type }
+    partial('event_type_attributes/show', object: attr)
   end
 end
