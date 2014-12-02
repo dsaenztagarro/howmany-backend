@@ -6,12 +6,12 @@ require_relative 'support/coverage'
 
 ENV['RACK_ENV'] = 'test'
 
+# Load application code
+require File.expand_path '../../config/boot.rb', __FILE__
+
 # Load factories
 FactoryGirl.definition_file_paths = %w{./factories}
 FactoryGirl.find_definitions
-
-# Load application code
-require File.expand_path '../../app.rb', __FILE__
 
 # Avoid log noise
 ActiveRecord::Base.logger = nil unless ENV['LOG'] == true
@@ -20,7 +20,7 @@ module RSpecMixin
   include Rack::Test::Methods
   include FactoryGirl::Syntax::Methods
 
-  def app() HowManyApp end
+  def app() EventTypesController end
 
   def json_response
     JSON.parse(last_response.body)

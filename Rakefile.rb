@@ -2,7 +2,7 @@ require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 require 'sinatra/activerecord/rake'
 
-require_relative 'app'
+require_relative 'config/boot'
 Dir.glob("lib/tasks/*.rake").each { |path| load path }
 
 RuboCop::RakeTask.new do |task|
