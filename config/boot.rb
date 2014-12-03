@@ -10,6 +10,7 @@ require 'active_support/inflector'
 require 'builder'
 Rabl.register!
 
+require_relative '../app/controllers/application_controller'
 %w(models controllers views).each do |folder|
   Dir.glob("app/#{folder}/*.rb").each { |path| require_relative "../#{path}" }
 end

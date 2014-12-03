@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '../config/boot'
+require File.join(File.dirname(__FILE__), '..', 'config', 'boot')
 
 def api_url(namespace)
   "/api/v1/#{namespace}"
