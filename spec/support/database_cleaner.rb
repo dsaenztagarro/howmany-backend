@@ -1,3 +1,4 @@
+require 'database_cleaner'
 require 'factory_girl'
 
 RSpec.configure do |config|

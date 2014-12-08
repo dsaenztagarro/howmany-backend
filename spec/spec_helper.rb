@@ -1,14 +1,12 @@
-require 'database_cleaner'
 require 'json'
 require 'rack/test'
-require_relative 'support/coverage'
+
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |path| require path }
 
 ENV['RACK_ENV'] = 'test'
 
 # Load application code
 require File.expand_path '../../config/boot.rb', __FILE__
-
-Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 
 # Avoid log noise
 ActiveRecord::Base.logger = nil unless ENV['LOG'] == true
