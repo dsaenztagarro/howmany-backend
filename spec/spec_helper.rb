@@ -13,6 +13,7 @@ ActiveRecord::Base.logger = nil unless ENV['LOG'] == true
 
 module RSpecMixin
   include Rack::Test::Methods
+  include Warden::Test::Helpers
 
   def app() EventTypesController end
 

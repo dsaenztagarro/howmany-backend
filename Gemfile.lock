@@ -146,6 +146,8 @@ GEM
       equalizer (~> 0.0.9)
       parser (~> 2.2.0.pre.7)
       procto (~> 0.0.2)
+    warden (1.2.3)
+      rack (>= 1.0)
 
 PLATFORMS
   ruby
@@ -171,3 +173,4 @@ DEPENDENCIES
   sinatra (~> 1.4.5)
   sinatra-activerecord
   sinatra-contrib
+  warden

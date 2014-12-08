@@ -4,7 +4,7 @@ describe EventTypesController do
   describe 'GET /api/v1/event_types' do
     before :each do
       @event_types = create_list :event_type, 3
-      get '/api/v1/event_types'
+      get '/api/v1/event_types', {}, { 'HTTP_ACCESS_TOKEN' => 'my_access_token' }
     end
     it 'responses with ok' do
       expect(last_response).to be_ok

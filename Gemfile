@@ -6,6 +6,7 @@ gem 'rake', '~>10.4.2'
 gem 'sinatra', '~> 1.4.5'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
+gem 'warden'
 
 gem 'rabl'
 

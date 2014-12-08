@@ -6,3 +6,5 @@ end
 
 map(api_url 'event_types') { run EventTypesController }
 
+# run Rack::Cascade, [AuthorizationServer, ResourceServer]
+
