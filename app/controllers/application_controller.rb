@@ -1,5 +1,7 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::Warden
+  register Sinatra::Oauth2::Strategies
+  resource_server access_token_type: :bearer
 
   configure :development do
     register Sinatra::Reloader
@@ -23,16 +25,5 @@ class ApplicationController < Sinatra::Base
 
   Warden::Manager.before_failure do |env,opts|
     env['REQUEST_METHOD'] = 'POST'
-  end
-
-  Warden::Strategies.add(:access_token) do
-    def valid?
-      request.env["HTTP_ACCESS_TOKEN"].is_a?(String)
-    end
-
-    def authenticate!
-      access_granted = (request.env["HTTP_ACCESS_TOKEN"] == 'my_access_token')
-      !access_granted ? fail!("Could not log in") : success!(access_granted)
-    end
   end
 end

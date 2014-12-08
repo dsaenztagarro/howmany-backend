@@ -6,7 +6,7 @@ module Sinatra
       end
 
       def authenticate_user
-        warden.authenticate!(:access_token)
+        warden.authenticate!(:bearer)
       end
     end
 
