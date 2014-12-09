@@ -1,6 +1,5 @@
-class EventTypesController < ApplicationController
+class EventTypesController < ResourcesController
   get '/api/v1/event_types' do
-    authenticate_user
     @event_types = EventType.all
     rabl :event_types, :format => "json"
   end

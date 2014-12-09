@@ -1,7 +1,6 @@
 class ApplicationController < Sinatra::Base
   register Sinatra::Warden
   register Sinatra::Oauth2::Strategies
-  resource_server access_token_type: :bearer
 
   configure :development do
     register Sinatra::Reloader

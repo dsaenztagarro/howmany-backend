@@ -13,8 +13,9 @@ require 'builder'
 Rabl.register!
 
 Dir.glob("app/extensions/*.rb").each { |path| require_relative "../#{path}" }
-
-require_relative '../app/controllers/application_controller'
+%w(application resources).each do |c|
+  require_relative "../app/controllers/#{c}_controller"
+end
 
 %w(models controllers views).each do |folder|
   Dir.glob("app/#{folder}/*.rb").each { |path| require_relative "../#{path}" }

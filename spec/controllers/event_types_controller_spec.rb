@@ -25,7 +25,8 @@ describe EventTypesController do
       let(:event_type) { create :event_type, attributes_count: 3 }
       let(:event_type_attributes) { event_type.event_type_attributes }
       before :each do
-        get "/api/v1/event_types/#{event_type.id}"
+        get "/api/v1/event_types/#{event_type.id}", {},
+            { 'HTTP_AUTHORIZATION' => 'my_access_token' }
       end
 
       it 'responses with ok' do
@@ -53,7 +54,8 @@ describe EventTypesController do
     end
     context 'invalid event type' do
       it 'responses with status 500 error' do
-        get "/api/v1/event_types/1"
+        get "/api/v1/event_types/1", {},
+            { 'HTTP_AUTHORIZATION' => 'my_access_token' }
         expect(last_response.status).to eql(500)
       end
     end
